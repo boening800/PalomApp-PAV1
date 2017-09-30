@@ -4,11 +4,20 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+
+import {firebaseConfig} from '../environments/firebase-config';
+
 import { MyApp } from './app.component';
 import { InicioPage} from '../pages/inicio/inicio';
 import { MapaPage} from '../pages/mapa/mapa';
 import { CafeteriaPage} from '../pages/cafeteria/cafeteria';
 import { LaboratorioPage} from '../pages/laboratorio/laboratorio';
+import { SignUpPage } from '../pages/sign-up/sign-up';
+import { MenuPage } from '../pages/menu/menu';
+import { PlatoPage } from '../pages/plato/plato';
 
 @NgModule({
   declarations: [
@@ -16,11 +25,19 @@ import { LaboratorioPage} from '../pages/laboratorio/laboratorio';
     InicioPage,
     MapaPage,
     CafeteriaPage,
-    LaboratorioPage
+    LaboratorioPage,
+    SignUpPage,
+    MenuPage,
+    PlatoPage
+
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -28,7 +45,10 @@ import { LaboratorioPage} from '../pages/laboratorio/laboratorio';
     InicioPage,
     MapaPage,
     CafeteriaPage,
-    LaboratorioPage
+    LaboratorioPage,
+    SignUpPage,
+    MenuPage,
+    PlatoPage
   ],
   providers: [
     StatusBar,

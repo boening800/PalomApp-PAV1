@@ -7,6 +7,7 @@ import { InicioPage} from '../pages/inicio/inicio';
 import { MapaPage} from '../pages/mapa/mapa';
 import { CafeteriaPage} from '../pages/cafeteria/cafeteria';
 import { LaboratorioPage} from '../pages/laboratorio/laboratorio';
+import { SignUpPage } from '../pages/sign-up/sign-up';
 @Component({
   templateUrl: 'app.html'
 })
@@ -21,8 +22,8 @@ export class MyApp {
       {titulo:'Inicio',component:InicioPage,icon:'home'},
       {titulo:'Mapa',component:MapaPage,icon:'map'},
       {titulo:'Cafeteria',component:CafeteriaPage,icon:'cafe'},
-      {titulo:'Laboratorio',component:LaboratorioPage,icon:'desktop'}
-
+      {titulo:'Laboratorio',component:LaboratorioPage,icon:'desktop'},
+      {titulo:'Ingresar',component:SignUpPage,icon:'log-in'}
     ];
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { MenuPage } from '../menu/menu';
-
 /**
- * Generated class for the CafeteriaPage page.
+ * Generated class for the SignUpPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,20 +10,16 @@ import { MenuPage } from '../menu/menu';
 
 @IonicPage()
 @Component({
-  selector: 'page-cafeteria',
-  templateUrl: 'cafeteria.html',
+  selector: 'page-sign-up',
+  templateUrl: 'sign-up.html',
 })
-export class CafeteriaPage {
+export class SignUpPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  goToMenu(userID){
-    this.navCtrl.push(MenuPage, { userID:userID });
-  }
-
   ionViewDidLoad() {
-    console.log('cafeteria cargada');
+    console.log('ionViewDidLoad SignUpPage');
   }
 
 }
