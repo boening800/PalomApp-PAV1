@@ -3,6 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { GeolocationService } from '../services/geolocation.service';
+
 
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
@@ -18,6 +20,7 @@ import { LaboratorioPage} from '../pages/laboratorio/laboratorio';
 import { SignUpPage } from '../pages/sign-up/sign-up';
 import { MenuPage } from '../pages/menu/menu';
 import { PlatoPage } from '../pages/plato/plato';
+import { AuthProvider } from '../providers/auth/auth';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,9 @@ import { PlatoPage } from '../pages/plato/plato';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider,
+    GeolocationService
   ]
 })
 export class AppModule {}

@@ -19,13 +19,37 @@
 <ion-content padding>
   <ion-item>
     <ion-label floating>Correo UCSS</ion-label>
-    <ion-input type="email"></ion-input>
+    <ion-input 
+    [(ngModel)]="user.email" 
+    name="email" 
+    type="text" 
+    autocapitalize="off" 
+    required></ion-input>
   </ion-item>
   <ion-item>
       <ion-label floating>Contraseña</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input 
+      [(ngModel)]="user.password" 
+      name="password" 
+      type="password" 
+      required></ion-input>
   </ion-item>
   <div class="form-item">
-    <button ion-button color="PalomApp">Iniciar Sesión</button>
+    <button 
+    ion-button 
+    (click)="login()" 
+    type="submit" 
+    color="PalomApp" 
+    block>Iniciar Sesión</button>
+
+    <button 
+    ion-button 
+    (click)="signin()" 
+    type="submit" 
+    color="PalomApp" 
+    block
+  >Dar de alta
+  </button>
+
   </div>
 </ion-content>
